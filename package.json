@@ -1,0 +1,17 @@
+{
+  "name": "assignment-10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.3.1"
+  }
+}

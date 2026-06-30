@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* ١) تفعيل الدارك مود بالـ class مش بإعدادات النظام */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ٢) تعريف الألوان والخطوط عشان Tailwind يولّد الكلاسات المطلوبة */
+@theme {
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+  --color-accent: #ec4899;
+
+  --font-alexandria: "Alexandria", sans-serif;
+  --font-tajawal: "Tajawal", sans-serif;
+  --font-cairo: "Cairo", sans-serif;
+}
+
+/* Active Nav Link Indicator */
+.nav-links a {
+  position: relative;
+  padding-bottom: 4px;
+  color: var(--color-slate-600);
+  transition: color 0.4s ease-in-out;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(to left, var(--color-primary), var(--color-secondary));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-links a.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
